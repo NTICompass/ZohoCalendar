@@ -43,8 +43,22 @@ if ($code && $error !== 'access_denied') {
 	// $tokens['access_token']
 	// $tokens['expires_in']
 	
-	// The "access_token" is what used to make requests.  It can expire.  Te "expires_in" is how many seconds from now it expires.
-	// The "refresh_token" is used when the "access_token" expires.  You use it to get another one (with a new expiration).
+	// The "access_token" is what used to make requests.
+	// It can expire.  Te "expires_in" is how many seconds from now it expires.
+	
+	// The "refresh_token" is used when the "access_token" expires.
+	// You use it to get another one (with a new expiration).
+	
+	// Before every request, check if the token is expired.
+	// If it is expired, get a new token like this
+	$tokens = $zoho->refreshToken($tokens['refresh_token']);
+	
+	// Create an event
+	$eventDetails = $zoho->addEvent(
+		$tokens['access_token'], 'calendar-id',
+		'an event', ['start' => '2021-05-01 00:00:00', 'end' => '2021-05-01 06:00:00'],
+		'123 fake street', 'organizer'
+	);
 }
 else {
 	die('Zoho login Cancelled.');
