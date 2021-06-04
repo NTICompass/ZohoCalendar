@@ -26,6 +26,7 @@ header('Location: ' . $loginUrl);
 
 Here's the `oauth.php` file.
 
+```
 <?php
 require_once('ZohoCalendar.php');
 
@@ -48,3 +49,4 @@ if ($code && $error !== 'access_denied') {
 else {
 	die('Zoho login Cancelled.');
 }
+```
