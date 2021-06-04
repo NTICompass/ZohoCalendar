@@ -139,7 +139,7 @@ class ZohoCalendar {
             CURLOPT_HTTP_VERSION =>  CURL_HTTP_VERSION_2TLS
         ];
         $curlHeaders = [
-            'user-agent' => 'dl3app/2020.09'
+            'user-agent' => 'YourApp/xxx'
         ];
 
         if (self::DEBUG) {
