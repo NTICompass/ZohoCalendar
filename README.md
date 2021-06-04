@@ -55,8 +55,9 @@ if ($code && $error !== 'access_denied') {
 	
 	// Create an event
 	$eventDetails = $zoho->addEvent(
-		$tokens['access_token'], 'calendar-id',
-		'an event', ['start' => '2021-05-01 00:00:00', 'end' => '2021-05-01 06:00:00'],
+		$tokens['access_token'], 'calendar-id', 'an event',
+		# Use $date->format('c') where $date is a DateTime object to get these dates
+		['start' => '20210501T063000-0400', 'end' => '20210501T101500-0400'],
 		'123 fake street', 'organizer'
 	);
 }
