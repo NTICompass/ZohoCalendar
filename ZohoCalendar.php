@@ -31,7 +31,7 @@ class ZohoCalendar {
         return !isset($calendars['error']) ? $calendars['calendars'] : NULL;
     }
 
-    public function createAppCalendar($authToken) {
+    public function createCalendar($authToken) {
         $calendar = $this->_curlRequest('https://calendar.zoho.com/api/v1/calendars', [
             'name' => 'A new calendar',
             'color' => '#668CB3',
