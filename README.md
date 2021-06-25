@@ -44,7 +44,7 @@ if ($code && $error !== 'access_denied') {
 	// $tokens['expires_in']
 	
 	// The "access_token" is what used to make requests.
-	// It can expire.  Te "expires_in" is how many seconds from now it expires.
+	// It can expire.  The "expires_in" is how many seconds from now it expires.
 	
 	// The "refresh_token" is used when the "access_token" expires.
 	// You use it to get another one (with a new expiration).
